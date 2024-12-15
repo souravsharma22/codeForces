@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0)
+        {
+            int n = sc.nextInt();
+            int x=1;
+            int count=1;
+            int fir=0,sec=1;
+            if(n==1)
+            {
+                System.out.println(n);
+                continue;
+            }
+            while(x<n)
+            {
+                if(fir==0)
+                {
+                    x++;
+                    fir++;
+                    count++;
+                    sec--;
+                }
+                else
+                {
+                    x=x*2;
+                    fir--;
+                    sec++;
+                }
+            }
+            System.out.println(count);
+        }
+        
+    }
+}
