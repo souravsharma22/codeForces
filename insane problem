@@ -1,0 +1,31 @@
+#calculate number of pairs such that y/x = k^n 
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0)
+        {
+            int k=sc.nextInt();
+            int l1=sc.nextInt();
+            int r1=sc.nextInt();
+            int l2=sc.nextInt();
+            int r2=sc.nextInt();
+            long p=1;
+            int ans=0;
+            while (p<=1000000000) { 
+                if(p>r2)
+                    break;
+                ans+=Math.max(Math.min(r2/p,r1)-Math.max((l2+p-1)/p, l1)+1, 0);
+                p *=k;
+            }
+            
+            System.out.println(ans);
+        }
+        
+    }
+}
