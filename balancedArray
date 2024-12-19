@@ -1,0 +1,32 @@
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int even_sum = 0;
+            int odd_sum = 0;
+            int n = sc.nextInt();
+            if (n % 4 != 0) {
+                System.out.println("NO"); 
+            }else {
+                System.out.println("Yes");
+                for (int i = 1; i <= n / 2; i++) {
+                    System.out.print(2 * i + " ");
+                    even_sum += 2 * i;
+                }
+                for (int i = 1; i < n / 2; i++) {
+                    System.out.print(2 * i - 1 + " ");
+                    odd_sum += 2 * i - 1;
+                }
+                int lat = even_sum - odd_sum;
+                System.out.println(lat);
+            }
+
+        }
+
+    }
+}
